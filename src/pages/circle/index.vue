@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<view>
-			<text class="title">{{title}}</text>
+			圈子
 		</view>
 	</view>
 </template>
