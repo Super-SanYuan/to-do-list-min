@@ -1,40 +1,82 @@
 <template>
-	<view class="content">
-		<view>
-			首页
-		</view>
-	</view>
+  <view class="home-page-container common-page-container">
+    <view class="header-container">
+      <view class="logo"></view>
+      <input type="text" />
+      <button>添加今日代办</button>
+    </view>
+    <ecCanvas />
+    <view class="main-container">
+      <view class="title">
+        <text>今日代办:</text>
+      </view>
+      <view v-for="item in toDoList" class="items">
+        <view :key="item.id" class="item">{{ item.text }}</view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+import ecCanvas from '../../../components/ec-canvas/ec-canvas'
+export default {
+  data() {
+    return {
+      toDoList: [
+        {
+          id: 1,
+          text: '洗头发',
+        },
+        {
+          id: 2,
+          text: '四物汤',
+        },
+      ],
+    }
+  },
+  components: {
+    ecCanvas
+  },
+  onLoad() {},
+  methods: {},
+}
 </script>
 
-<style>
-	.content {
-		text-align: center;
-		height: 400upx;
-	}
-
-	.logo {
-		height: 200upx;
-		width: 200upx;
-		margin-top: 200upx;
-	}
-
-	.title {
-		font-size: 36upx;
-		color: #8f8f94;
-	}
+<style lang="scss">
+@import 'app.scss';
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header-container {
+    height: 90upx;
+    display: flex;
+    input {
+      height: 100%;
+      border: 1px solid red;
+    }
+    color: red;
+    button {
+      color: $app-color-primary;
+    }
+  }
+  .main-container {
+    background-color: #fff;
+    margin-top: 10px;
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .items {
+      display: flex;
+      justify-content: center;
+      .item {
+        margin: 4px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
 </style>
