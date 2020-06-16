@@ -19,6 +19,23 @@
       }
     }
   ],
+  "condition": {
+    "current": 1,
+    "list": [
+      {
+        "name": "首页", 
+        "path": "pages/home/index"
+      },
+      {
+        "name": "圈子", 
+        "path": "pages/circle/index"
+      },
+      {
+        "name": "个人中心",
+        "path": "pages/mine/index"
+      }
+    ]
+  },
   "tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#3cc51f",
@@ -47,8 +64,8 @@
   },
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "你好、爱人",
+    "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#F8F8F8"
   }
 }
